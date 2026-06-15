@@ -8,15 +8,8 @@
 
 ## 软件截图
 
-主界面（参数区 + 双日志窗口 + 状态栏）：
+<img width="1920" height="1152" alt="image" src="https://github.com/user-attachments/assets/802f60e7-b135-414d-b77f-4d70041249f5" />
 
-![DnsTest 主界面](https://github.com/user-attachments/assets/0dfbba3b-2670-476c-9c5d-26977004dff1)
-
-运行中的截图示例：
-
-> 🔧 **说明**：如需替换为您自己的截图：
-> 1. 在仓库首页点击 **Add file** → **Upload files**，上传一张截图（建议 PNG / JPG，宽度约 1200px）
-> 2. 或直接编辑本文件，把上面图片 URL 替换为您上传图片的链接
 
 ---
 
@@ -205,18 +198,6 @@ ECS 仅在对方 DNS 显式支持时才生效，常见公共递归（1.1.1.1 / 8
 ---
 
 ## 项目结构
-
-```
-dig/
-├── dig_concurrent.py          # 主程序（约 750 行，含详细注释）
-├── README.md                  # 项目说明（本文件）
-├── DNS测试工具使用说明.md      # 详细使用说明（中文）
-├── .gitignore                 # 忽略 build/ dist/ __pycache__/ 等
-├── DnsTest.spec               # PyInstaller 配置（自动生成）
-├── build/                     # PyInstaller 中间产物
-└── dist/
-    └── DnsTest.exe            # 单文件可执行程序
-```
 
 ---
 
