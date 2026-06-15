@@ -33,14 +33,6 @@
 
 ## 运行方式
 
-### 方式一：单文件 exe（推荐，不需要安装 Python）
-
-直接双击 `dist\DnsTest.exe` 即可运行。
-
-> 如 `dist\` 目录不存在，请使用下方源码方式运行并打包。
-
-### 方式二：Python 源码方式
-
 ```bash
 pip install dnspython
 python dig_concurrent.py
