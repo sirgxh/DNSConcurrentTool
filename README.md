@@ -6,6 +6,20 @@
 
 ---
 
+## 软件截图
+
+主界面（参数区 + 双日志窗口 + 状态栏）：
+
+![DnsTest 主界面](https://github.com/user-attachments/assets/0dfbba3b-2670-476c-9c5d-26977004dff1)
+
+运行中的截图示例：
+
+> 🔧 **说明**：如需替换为您自己的截图：
+> 1. 在仓库首页点击 **Add file** → **Upload files**，上传一张截图（建议 PNG / JPG，宽度约 1200px）
+> 2. 或直接编辑本文件，把上面图片 URL 替换为您上传图片的链接
+
+---
+
 ## 功能特性
 
 - ✅ 支持多域名（一行一个）
@@ -124,6 +138,51 @@ pyinstaller --onefile --noconsole --name DnsTest dig_concurrent.py
 | DNS 服务器 | 权威 DNS IP |
 | ECS 子网 | `203.0.113.0/24` |
 | bufsize | `4096` |
+
+---
+
+## 与其他 DNS 工具对比
+
+### 一、GUI DNS 工具对比
+
+| 项目 | 语言 | GUI | 并发查询 | ECS/EDNS | strace | 固定源端口 | IPv6 |
+| :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **本工具 (DnsTest)** | Python | ✅ Tkinter | ✅ 线程池 | ✅ | ✅ | ✅ | ✅ |
+| [DnsSpeedTestApp](https://github.com/xihan123/DnsSpeedTestApp) | 桌面应用 | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| [bargozin-desktop](https://github.com/403unlocker/bargozin-desktop) | 桌面应用 | ✅ | ✅ | ❌ | ❌ | ❌ | ❌ |
+| [whoisdigger](https://github.com/supermarsx/whoisdigger) | Tauri | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+| [MyIP](https://github.com/jason5ng32/MyIP) | 网页/Web | ✅ | ❌ | ❌ | ❌ | ❌ | ❌ |
+
+### 二、CLI / 高性能批量 DNS 解析工具对比
+
+| 项目 | 语言 | 功能定位 | 图形界面 | 适合场景 |
+| :--- | :--- | :--- | :---: | :--- |
+| **本工具 (DnsTest)** | Python | GUI 并发测试 + 多协议 | ✅ | 教学/测试/可视化/日常使用 |
+| [massdns](https://github.com/blechschmidt/massdns) | C | 超高并发批量 DNS 解析（子域名枚举） | ❌ | 大规模批量查询、渗透测试 |
+| [pydig](https://github.com/shuque/pydig) | Python | 通用 DNS 查询工具 | ❌ CLI | 单条/批量查询、学习 DNS 协议 |
+| [go-bulk-dns-resolver](https://github.com/threatstream/go-bulk-dns-resolver) | Go | 极速批量 DNS 解析 | ❌ | 威胁情报 / 大规模解析 |
+| [bulkDNS](https://github.com/maroofi/bulkDNS) | Python | 大规模 DNS 测量扫描 | ❌ | 学术研究 / 测量分析 |
+| [asyncdns](https://github.com/flier/asyncdns) | Python | 异步 DNS 查询管道 | ❌ | 脚本集成 / 自动化处理 |
+
+### 三、DNS 性能测试/压力测试工具对比
+
+| 项目 | 语言 | UDP | TCP | DoT | DoH | 性能 |
+| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| **本工具 (DnsTest)** | Python | ✅ | ✅ | ❌ | ❌ | 中等（适合日常测试） |
+| [flamethrower](https://github.com/DNS-OARC/flamethrower) | C++ | ✅ | ✅ | ✅ | ✅ | 极高（专业级测试工具） |
+| [dnsblast](https://github.com/jedisct1/dnsblast) | C | ✅ | ❌ | ❌ | ❌ | 高（轻量级压力测试） |
+| [dnsstresss](https://github.com/MickaelBergem/dnsstresss) | Go | ✅ | ✅ | ❌ | ❌ | 高 |
+| [dns-benchmark (xxnuo)](https://github.com/xxnuo/dns-benchmark) | Python | ✅ | ✅ | ✅ | ✅ | 中等（支持可视化图表） |
+| [dnsperftest](https://github.com/cleanbrowsing/dnsperftest) | Shell | ✅ | ✅ | ✅ | ✅ | 中等（命令行多 DNS 对比） |
+
+### 四、本工具的独特优势
+
+- 🌟 **完整中文 GUI** — 无需命令行操作，Tkinter 图形界面，国内用户友好
+- 🌟 **ECS (Client Subnet) 支持** — 可测试基于客户端子网的地理位域路由
+- 🌟 **固定源端口 + IPv4/IPv6 双栈** — 用于测试策略防火墙、源端口过滤等安全场景
+- 🌟 **strace 逐级追踪权威服务器** — 类似 `dig +trace`，完整还原 DNS 解析链路
+- 🌟 **双日志窗口 + 实时进度** — 成功/失败分色显示，便于快速排查异常
+- 🌟 **单文件 exe 可分发** — PyInstaller 打包，无 Python 环境也能运行
 
 ---
 
