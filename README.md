@@ -187,9 +187,6 @@ pyinstaller --onefile --noconsole --name DnsTest dig_concurrent.py
 **Q4：ECS 无效果？**
 ECS 仅在对方 DNS 显式支持时才生效，常见公共递归（1.1.1.1 / 8.8.8.8 / 223.5.5.5）均支持。
 
----
-
-## 项目结构
 
 ---
 
